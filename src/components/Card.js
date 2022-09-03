@@ -9,7 +9,7 @@ export default function Card(props) {
           <div className="element__inf">
             <h3 className="element__title">{props.card.name}</h3>
             <div className="element__like">
-              <button type="button" className="element__like-group"></button>
+              <button type="button" className="element__like-group" />
               <span className="element__like-counter">{props.card.likes.length}</span>
             </div>
           </div>
