@@ -13,7 +13,7 @@ function Main(props) {
             setuserName(user.name)
             setuserDescription(user.about)
             setuserAvatar(user.avatar)
-        })
+        }).catch(err => console.log(`Error: ${err}`))
         api.getInitialCards().then(card => {
             setCards(card)
         }).catch(err => console.log(`Error: ${err}`))
