@@ -4,7 +4,7 @@ export default function PopupWithForm(props) {
         <div className={`${props.name}__form`}>
           <h3 className="popup__title">{props.title}</h3>
           <button className="popup__close-btn" type="button" onClick={props.onClose} />
-          <form action="#" name={`${props.form}`} className="popup__form" noValidate>
+          <form action="#" name={`${props.form}`} className="popup__form" onSubmit={props.onSubmit} noValidate>
             {props.children}
           </form>
         </div>

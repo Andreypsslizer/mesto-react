@@ -16,24 +16,24 @@ class Api {
       }).then(this._getResponse)
     }
 
-    setUser(name, job) {
+    setUser(data) {
         return fetch(`${this._baseURL}/users/me`, {
             method: 'PATCH',
             headers: this._headers,
             body: JSON.stringify({
-                name: name,
-                about: job
+                name: data.profile_name,
+                about: data.profile_job
               })
         }).then(this._getResponse)
     }
 
-    addCard(name, link) {
+    addCard(data) {
         return fetch(`${this._baseURL}/cards`, {
             method: 'POST',
             headers: this._headers,
             body: JSON.stringify({
-                name: name,
-                link: link
+                name: data.name,
+                link: data.link
               })
         }).then(this._getResponse)
     }
@@ -59,12 +59,12 @@ class Api {
       }).then(this._getResponse)
     }
 
-    avatarChange(link) {
+    avatarChange(data) {
       return fetch(`${this._baseURL}/users/me/avatar`, {
         method: 'PATCH',
         headers: this._headers,
         body: JSON.stringify({
-            avatar: link
+            avatar: data.link
           })
     }).then(this._getResponse)
     } 
